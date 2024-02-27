@@ -79,9 +79,9 @@
 
         </div>
     </nav>
-    <div
-        style="display:flex;flex-direction: row;justify-content: center; padding-top: 60px;background-color: #FAFAFA; text-align: center;">
+    <div style="display:flex;flex-direction: row;justify-content: center; padding-top: 60px;background-color: #FAFAFA; text-align: center;">
         <div style="width:600px;height:1000px;margin-right:412px">
+            {%for feed in feeds%}
             <!-- left side -->
             <div style="text-align: center;border: solid 1px grey;background-color: white;min-width: 500px;">
                 <!-- For feed -->
@@ -90,8 +90,7 @@
                     <div class="factor" style="display: flex;flex-direction: row; align-items: center;">
                         <!-- Profile Photoes -->
                         <div class="box" style="background: #BDBDBD;">
-                            <img class="profile"
-                                src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            <img class="profile" src="{{feed.profile_image}}">
                         </div>
                         <!-- Nickname -->
                         <div style="padding-left: 5px;">
@@ -101,8 +100,7 @@
                 </div>
                 <!-- Feed Image -->
                 <div class="factor">
-                    <img class="image-thumbnail" ,
-                        src="https://www.agoda.com/wp-content/uploads/2024/02/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg">
+                    <img class="image-thumbnail" , src="{{feed.image}}">
                 </div>
                 <!-- Icon sets -->
                 <div style="display: flex;flex-direction: row;justify-content: space-between;">
@@ -125,8 +123,8 @@
                         <img class="profile"
                             src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
                     </div>
-                    <div class="factor" , style="align-items:center left;font-size: 13px;">춘식이 <b>외 19명</b>이 좋아합니다.
-                    </div>
+                    <div class="factor" style="align-items:center; left;font-size: 13px;">춘식이 <b>외
+                            {{feed.like_count}}명</b>이 좋아합니다.</div>
                 </div>
                 <!-- author's posting -->
                 <div class="factor" style="text-align: left; margin-left: 10px;">
@@ -149,12 +147,14 @@
                 <!-- comment inputting space -->
                 <div class="factor"><input style="box-shadow: none" type="email" class="form-control"
                         id="exampleFormControlInput1" placeholder="댓글 달기.."></div>
-            </div>
-            <!-- right side -->
-        </div>
+                    </div>
+    {%endfor%}
+</div>
+<!-- right side -->
+
         <div style="position:fixed;width:400px;height:1000px;background-color:#FAFAFA;left:60%">
             <!-- right side my profile -->
-            <div style = "margin-bottom: 10px;">
+            <div style="margin-bottom: 10px;">
                 <!-- Profile and Nicknames -->
                 <div class="factor" style="display: flex;flex-direction: row; align-items: center; ">
                     <!-- Profile Photoes -->
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <!-- user you might know -->
-            <div style = "font-size: 15px;">
+            <div style="font-size: 15px;">
                 <div style="display: flex; justify-content: space-around;color:grey;margin-bottom: 10px;">
                     <div>
                         회원님을 위한 추천
@@ -186,8 +186,9 @@
                 <!-- profile of the user you might know -->
                 <div>
                     <!-- Profile and Nicknames -->
-                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
-                        <div style ="display: flex;flex-direction: row;">
+                    <div class="factor"
+                        style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;">
                             <!-- Profile Photoes -->
                             <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
                                 <img class="profile"
@@ -203,15 +204,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div style = "font-weight: bold;color:blue">
-                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        <div style="font-weight: bold;color:blue">
+                            <a style="text-decoration: none;" href="#">팔로우</a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <!-- Profile and Nicknames -->
-                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
-                        <div style ="display: flex;flex-direction: row;">
+                    <div class="factor"
+                        style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;">
                             <!-- Profile Photoes -->
                             <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
                                 <img class="profile"
@@ -227,15 +229,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div style = "font-weight: bold;color:blue">
-                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        <div style="font-weight: bold;color:blue">
+                            <a style="text-decoration: none;" href="#">팔로우</a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <!-- Profile and Nicknames -->
-                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
-                        <div style ="display: flex;flex-direction: row;">
+                    <div class="factor"
+                        style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;">
                             <!-- Profile Photoes -->
                             <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
                                 <img class="profile"
@@ -251,15 +254,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div style = "font-weight: bold;color:blue">
-                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        <div style="font-weight: bold;color:blue">
+                            <a style="text-decoration: none;" href="#">팔로우</a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <!-- Profile and Nicknames -->
-                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
-                        <div style ="display: flex;flex-direction: row;">
+                    <div class="factor"
+                        style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;">
                             <!-- Profile Photoes -->
                             <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
                                 <img class="profile"
@@ -275,15 +279,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div style = "font-weight: bold;color:blue">
-                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        <div style="font-weight: bold;color:blue">
+                            <a style="text-decoration: none;" href="#">팔로우</a>
                         </div>
                     </div>
                 </div>
                 <div>
                     <!-- Profile and Nicknames -->
-                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
-                        <div style ="display: flex;flex-direction: row;">
+                    <div class="factor"
+                        style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style="display: flex;flex-direction: row;">
                             <!-- Profile Photoes -->
                             <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
                                 <img class="profile"
@@ -299,14 +304,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div style = "font-weight: bold;color:blue">
-                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        <div style="font-weight: bold;color:blue">
+                            <a style="text-decoration: none;" href="#">팔로우</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- etc -->
-            <div style = "font-size:12px; color: lightgrey; text-align: left; margin-left: 45px;margin-top:10px">
+            <div style="font-size:12px; color: lightgrey; text-align: left; margin-left: 45px;margin-top:10px">
                 <div>소개 도움말 홍보센터 등등</div>
                 <div>2021 인스타그램 프롬 페이스북</div>
             </div>
