@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import Main
+from content.views import Main_Content
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', Main.as_view()),
+    path('main/',Main_Content.as_view()),
 ]
