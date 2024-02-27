@@ -1,140 +1,320 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>gyeomstagram</title>
     <!-- google font link -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- BootStrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-    .box {
-    margin-left:5px;
-    margin-right:5px;
-    margin-top:5px;
-    margin-bottom:5px;
-    width: 45px;
-    height: 45px; 
-    border-radius: 70%;
-    overflow: hidden;
-    }
-    .profile {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .image-thumbnail {
-        width:100%;
-        height:100%;
-        object-fit:cover;
-    }
-    .factor{
-        margin-bottom: 5px;
-    }
-    .comments{
-        font-size: 14px;
-    }
-    input:focus {outline: none;}
+        .box {
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 45px;
+            height: 45px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .factor {
+            margin-bottom: 5px;
+        }
+
+        .comments {
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+        }
     </style>
 
 </head>
-  <body>
-<nav style="position: fixed;width: 100%;" class="navbar navbar-expand-lg bg-body-tertiary">
-    <div style = "justify-content:space-between;flex-wrap: nowrap;min-width: 1000px;height:35px" class="container-fluid">
-    <a class="navbar-brand" href="#"><img style = "width:100px"
-        src ="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Instagram-1.png">
-    </a>
-        <input style =" width:300px;height:30px ;"class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <div class = "icon division">
-            <span class="material-symbols-outlined">
-                home
+
+<body>
+    <nav style="position: fixed;width: 100%;" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div style="justify-content:space-between;flex-wrap: nowrap;min-width: 1000px;height:35px"
+            class="container-fluid">
+            <a class="navbar-brand" href="#"><img style="width:100px"
+                    src="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Instagram-1.png">
+            </a>
+            <input style=" width:300px;height:30px ;" class="form-control me-2" type="search" placeholder="Search"
+                aria-label="Search">
+            <div class="icon division">
+                <span class="material-symbols-outlined">
+                    home
                 </span>
-            <span class="material-symbols-outlined">
-                send
+                <span class="material-symbols-outlined">
+                    send
                 </span>
-            <span class="material-symbols-outlined">
-                add_box
+                <span class="material-symbols-outlined">
+                    add_box
                 </span>
-            <span class="material-symbols-outlined">
-                explore
+                <span class="material-symbols-outlined">
+                    explore
                 </span>
-            <span class="material-symbols-outlined">
-                favorite
+                <span class="material-symbols-outlined">
+                    favorite
                 </span>
+            </div>
+
         </div>
-        
-    </div>
-</nav>
-<div style="display:flex;flex-direction: row;justify-content: center; padding-top: 60px;background-color: #FAFAFA">    
-    <div style ="width:600px;height:1000px;margin-right:412px">
-        <!-- left side -->
-        <div style = "text-align: center;border: solid 1px grey;background-color: white;min-width: 500px;">
-            <!-- For feed -->
-            <div>
-            <!-- Profile and Nicknames -->
-                <div class = "factor" style ="display: flex;flex-direction: row; align-items: center;">
+    </nav>
+    <div
+        style="display:flex;flex-direction: row;justify-content: center; padding-top: 60px;background-color: #FAFAFA; text-align: center;">
+        <div style="width:600px;height:1000px;margin-right:412px">
+            <!-- left side -->
+            <div style="text-align: center;border: solid 1px grey;background-color: white;min-width: 500px;">
+                <!-- For feed -->
+                <div>
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row; align-items: center;">
+                        <!-- Profile Photoes -->
+                        <div class="box" style="background: #BDBDBD;">
+                            <img class="profile"
+                                src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                        </div>
+                        <!-- Nickname -->
+                        <div style="padding-left: 5px;">
+                            <b>gyeom_03</b>
+                        </div>
+                    </div>
+                </div>
+                <!-- Feed Image -->
+                <div class="factor">
+                    <img class="image-thumbnail" ,
+                        src="https://www.agoda.com/wp-content/uploads/2024/02/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg">
+                </div>
+                <!-- Icon sets -->
+                <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                    <div style="margin-left: 10px;">
+                        <!-- like icon -->
+                        <span class="material-symbols-outlined">favorite</span>
+                        <!-- comment icon -->
+                        <span class="material-symbols-outlined">mode_comment</span>
+                        <!-- send icon -->
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <div>
+                        <!-- bookmark icon -->
+                        <span class="material-symbols-outlined">bookmark</span>
+                    </div>
+                </div>
+                <!-- how many people liked -->
+                <div style="display: flex;flex-direction: row;">
+                    <div class="box" style="background: #BDBDBD;width: 20px; height: 20px;margin-left: 7px;">
+                        <img class="profile"
+                            src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                    </div>
+                    <div class="factor" , style="align-items:center left;font-size: 13px;">춘식이 <b>외 19명</b>이 좋아합니다.
+                    </div>
+                </div>
+                <!-- author's posting -->
+                <div class="factor" style="text-align: left; margin-left: 10px;">
+                    <b style="margin-right: 10px;">gyeom_03</b>요즘에 해외여행을 못가니 제주도 많이 갑니다.
+                </div>
+                <!-- comments in posting -->
+                <div class="factor comments">
+                    <div class="factor comments" style="color: grey; text-align: left;margin-left: 10px">
+                        댓글 10개 모두 보기
+                    </div>
+                    <div class="factor" style="text-align: left; margin-left: 10px;">
+                        <b style="margin-right: 10px;">aaaa</b>부러워요.
+                    </div>
+                    <div class="factor" style="text-align: left; margin-left: 10px;">
+                        <b style="margin-right: 10px;">bbbb</b>돌하르방이 이쁘게 생겼네요.
+                    </div>
+                </div>
+                <!-- horizontal line -->
+                <hr />
+                <!-- comment inputting space -->
+                <div class="factor"><input style="box-shadow: none" type="email" class="form-control"
+                        id="exampleFormControlInput1" placeholder="댓글 달기.."></div>
+            </div>
+            <!-- right side -->
+        </div>
+        <div style="position:fixed;width:400px;height:1000px;background-color:#FAFAFA;left:60%">
+            <!-- right side my profile -->
+            <div style = "margin-bottom: 10px;">
+                <!-- Profile and Nicknames -->
+                <div class="factor" style="display: flex;flex-direction: row; align-items: center; ">
                     <!-- Profile Photoes -->
-                    <div class="box" style="background: #BDBDBD;">
-                        <img class="profile" src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                    <div class="box" style="background: #BDBDBD; margin-left: 45px;">
+                        <img class="profile"
+                            src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
                     </div>
                     <!-- Nickname -->
-                    <div style="padding-left: 5px;">
-                        <b>gyeom_03</b>
+                    <div style="padding-left: 5px;margin-left: 10px;text-align: left;">
+                        <div>
+                            <b>gyeom_03</b>
+                        </div>
+                        <div style="color:grey">
+                            Hangyeom Lee
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Feed Image -->
-            <div class = "factor">
-                <img class="image-thumbnail", src = "https://www.agoda.com/wp-content/uploads/2024/02/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg">
-            </div>
-            <!-- Icon sets -->
-            <div style = "display: flex;flex-direction: row;justify-content: space-between;">
-                <div style="margin-left: 10px;">
-                    <!-- like icon -->
-                    <span class="material-symbols-outlined">favorite</span>
-                    <!-- comment icon -->
-                    <span class="material-symbols-outlined">mode_comment</span>
-                    <!-- send icon -->
-                    <span class="material-symbols-outlined">send</span>
+            <!-- user you might know -->
+            <div style = "font-size: 15px;">
+                <div style="display: flex; justify-content: space-around;color:grey;margin-bottom: 10px;">
+                    <div>
+                        회원님을 위한 추천
+                    </div>
+                    <div>
+                        <a href="https://google.com" style="text-decoration: none; color: black">모두보기</a>
+                    </div>
+                </div>
+                <!-- profile of the user you might know -->
+                <div>
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style ="display: flex;flex-direction: row;">
+                            <!-- Profile Photoes -->
+                            <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
+                                <img class="profile"
+                                    src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            </div>
+                            <!-- Nickname -->
+                            <div style="padding-left: 5px;text-align: left;">
+                                <div>
+                                    <b>h38lee</b>
+                                </div>
+                                <div style="color:grey">
+                                    honghong
+                                </div>
+                            </div>
+                        </div>
+                        <div style = "font-weight: bold;color:blue">
+                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <!-- bookmark icon -->
-                    <span class="material-symbols-outlined">bookmark</span>
-                </div>
-            </div>
-            <!-- how many people liked -->
-            <div style="display: flex;flex-direction: row;">
-                    <div class="box" style="background: #BDBDBD;width: 20px; height: 20px;margin-left: 7px;">
-                        <img class="profile" src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style ="display: flex;flex-direction: row;">
+                            <!-- Profile Photoes -->
+                            <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
+                                <img class="profile"
+                                    src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            </div>
+                            <!-- Nickname -->
+                            <div style="padding-left: 5px;text-align: left;">
+                                <div>
+                                    <b>zinedine.03012</b>
+                                </div>
+                                <div style="color:grey">
+                                    Zinedine Courboune
+                                </div>
+                            </div>
+                        </div>
+                        <div style = "font-weight: bold;color:blue">
+                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        </div>
                     </div>
-                <div class = "factor", style = "align-items:center left;font-size: 13px;">춘식이 <b>외 19명</b>이 좋아합니다.</div>
-            </div>
-            <!-- author's posting -->
-            <div class = "factor" style = "text-align: left; margin-left: 10px;">
-                <b style = "margin-right: 10px;">gyeom_03</b>요즘에 해외여행을 못가니 제주도 많이 갑니다.
-            </div>
-            <!-- comments in posting -->
-            <div class = "factor comments">
-                <div class ="factor comments" style="color: grey; text-align: left;margin-left: 10px">
-                    댓글 10개 모두 보기
                 </div>
-                <div class = "factor" style = "text-align: left; margin-left: 10px;">
-                    <b style = "margin-right: 10px;">aaaa</b>부러워요.
+                <div>
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style ="display: flex;flex-direction: row;">
+                            <!-- Profile Photoes -->
+                            <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
+                                <img class="profile"
+                                    src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            </div>
+                            <!-- Nickname -->
+                            <div style="padding-left: 5px;text-align: left;">
+                                <div>
+                                    <b>faker</b>
+                                </div>
+                                <div style="color:grey">
+                                    Sanghyuk Lee
+                                </div>
+                            </div>
+                        </div>
+                        <div style = "font-weight: bold;color:blue">
+                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        </div>
+                    </div>
                 </div>
-                <div class = "factor" style = "text-align: left; margin-left: 10px;">
-                    <b style = "margin-right: 10px;">bbbb</b>돌하르방이 이쁘게 생겼네요.
+                <div>
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style ="display: flex;flex-direction: row;">
+                            <!-- Profile Photoes -->
+                            <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
+                                <img class="profile"
+                                    src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            </div>
+                            <!-- Nickname -->
+                            <div style="padding-left: 5px;text-align: left;">
+                                <div>
+                                    <b>172.kw</b>
+                                </div>
+                                <div style="color:grey">
+                                    Junho Lee
+                                </div>
+                            </div>
+                        </div>
+                        <div style = "font-weight: bold;color:blue">
+                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Profile and Nicknames -->
+                    <div class="factor" style="display: flex;flex-direction: row;align-items: center; justify-content: space-between;">
+                        <div style ="display: flex;flex-direction: row;">
+                            <!-- Profile Photoes -->
+                            <div class="box" style="background: #BDBDBD;width: 30px; height: 30px;margin-left: 45px">
+                                <img class="profile"
+                                    src="https://image.idus.com/image/files/3f5fd8ce65064aada15dd62dd70d1ded_720.jpg">
+                            </div>
+                            <!-- Nickname -->
+                            <div style="padding-left: 5px;text-align: left;">
+                                <div>
+                                    <b>Danny.kim</b>
+                                </div>
+                                <div style="color:grey">
+                                    Danny
+                                </div>
+                            </div>
+                        </div>
+                        <div style = "font-weight: bold;color:blue">
+                            <a style = "text-decoration: none;" href ="#">팔로우</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- horizontal line -->
-            <hr />
-            <!-- comment inputting space -->
-            <div class = "factor" ><input style="box-shadow: none" type="email" class="form-control" id="exampleFormControlInput1" placeholder="댓글 달기.."></div>
+            <!-- etc -->
+            <div style = "font-size:12px; color: lightgrey; text-align: left; margin-left: 45px;margin-top:10px">
+                <div>소개 도움말 홍보센터 등등</div>
+                <div>2021 인스타그램 프롬 페이스북</div>
+            </div>
         </div>
     </div>
-    <div style ="position:fixed;width:400px;height:1000px;background-color:aqua;left:60%">
-    </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
