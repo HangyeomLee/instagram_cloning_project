@@ -77,7 +77,6 @@
         }
 
         .image_upload_space {
-            margin: 0 auto;
             outline: 2px dashed #92b0b3;
             outline-offset: -10px;
             text-align: center;
@@ -387,15 +386,19 @@
                     닫기
                 </div>
             </div>
-            <div style="display: flex;flex-direction: row;">
-                <div class="image_upload_space" style = "background-size: 300px;">
-
+            <div style="display: flex;flex-direction: row; margin-left: 0;">
+                <div class="image_upload_space" style = "width:500px;height:540px;margin-right: 10px;">
                 </div>
-                <div style = "background-color: aqua;">
+                <div>
                     글 입력하는곳
+                    <div class="mb-3" style = "margin-top: 10px;">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style = "width: 275px"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" style = "width: 100%;">공유하기</button>
                 </div>
             </div>
 
+               
         </div>
     </div>
     <!-- jQuery -->
@@ -448,7 +451,7 @@
                     "outline": "none",
                     "background-size": "100%",
                     "background-repeat": "no-repeat",
-                    "background-position": "center center",
+                    "background-position": "left center",
                 });
                 $('#img_modal').css({
                     display: 'none',
