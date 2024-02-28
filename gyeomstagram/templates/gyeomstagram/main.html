@@ -76,16 +76,17 @@
             padding: 10px;
         }
 
-        .content {
+        .image_upload_space {
             margin: 0 auto;
             outline: 2px dashed #92b0b3;
             outline-offset: -10px;
             text-align: center;
             transition: all .15s ease-in-out;
-            width: 700px;
-            height: 500px;
-            background-color: gray;
+            width: 780px;
+            height: 530px;
+            margin-top: 10px;
         }
+
     </style>
 
 </head>
@@ -358,29 +359,50 @@
         </div>
     </div>
     <!-- modal window creating -->
-    <div class="modal_overlay">
+    <div id="img_modal" class="modal_overlay">
         <div class="modal_window">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div>
-
                 </div>
                 <div>
                     새 이미지 업로드
                 </div>
-                <div id="modal_close_button">
+                <div class="modal_close_button">
                     닫기
                 </div>
             </div>
-            <p>drag and drop your image!</p>
-            <div class="content">
+            <div class="image_upload_space">
             </div>
+        </div>
+    </div>
+
+    <div id="content_modal" class="modal_overlay">
+        <div class="modal_window">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <div>
+                </div>
+                <div>
+                </div>
+                <div class="modal_close_button">
+                    닫기
+                </div>
+            </div>
+            <div style="display: flex;flex-direction: row;">
+                <div class="image_upload_space" style = "background-size: 300px;">
+
+                </div>
+                <div style = "background-color: aqua;">
+                    글 입력하는곳
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- jQuery -->
 
     <script>
         $('#nav_bar_add_box').click(function () {
-            $('.modal_overlay').css({
+            $('#img_modal').css({
                 display: 'flex',
             })
 
@@ -389,7 +411,7 @@
             })
         })
 
-        $('.content')
+        $('.image_upload_space')
             .on("dragover", dragOver)
             .on("dragleave", dragOver)
             .on("drop", uploadFiles);
@@ -399,12 +421,10 @@
             e.preventDefault();
             if (e.type == "dragover") {
                 $(e.target).css({
-                    "background-color": "black",
                     "outline-offset": "-20px"
                 });
             } else {
                 $(e.target).css({
-                    "background-color": "gray",
                     "outline-offset": "-10px"
                 });
             }
@@ -423,20 +443,32 @@
                 return;
             }
             if (files[0].type.match(/image.*/)) {
-                $(e.target).css({
+                $(".image_upload_space").css({
                     "background-image": "url(" + window.URL.createObjectURL(files[0]) + ")",
                     "outline": "none",
-                    "background-size": "100% 100%"
+                    "background-size": "100%",
+                    "background-repeat": "no-repeat",
+                    "background-position": "center center",
                 });
+                $('#img_modal').css({
+                    display: 'none',
+                })
+                $('#content_modal').css({
+                    display: 'flex',
+                })
+                
             } else {
                 alert('이미지가 아닙니다.');
                 return;
             }
         }
 
-        $('#modal_close_button').click(function(){
-            $('.modal_overlay').css({
-                display: 'none',
+        $('.modal_close_button').click(function () {
+            $('#img_modal').css({
+                display: 'none'
+            })
+            $('#content_modal').css({
+                display: 'none'
             })
         })
     </script>
