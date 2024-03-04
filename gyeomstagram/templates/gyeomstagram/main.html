@@ -392,9 +392,9 @@
                 <div>
                     글 입력하는곳
                     <div class="mb-3" style = "margin-top: 10px;">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style = "width: 275px"></textarea>
+                        <textarea id = "input_feed_content" class="form-control" id="exampleFormControlTextarea1" rows="3" style = "width: 275px"></textarea>
                     </div>
-                    <button type="button" class="btn btn-primary" style = "width: 100%;">공유하기</button>
+                    <button id = "feed_create_button" type="button" class="btn btn-primary" style = "width: 100%;">공유하기</button>
                 </div>
             </div>
 
@@ -404,6 +404,8 @@
     <!-- jQuery -->
 
     <script>
+        let files
+
         $('#nav_bar_add_box').click(function () {
             $('#img_modal').css({
                 display: 'flex',
@@ -440,7 +442,7 @@
             dragOver(e);
 
             e.dataTransfer = e.originalEvent.dataTransfer;
-            var files = e.target.files || e.dataTransfer.files;
+            files = e.target.files || e.dataTransfer.files;
             if (files.length > 1) {
                 alert('하나만 올려라.');
                 return;
@@ -477,6 +479,40 @@
                 overflow: 'visible'
             })
         })
+
+        $('#feed_create_button').click(function(){
+            alert("공유하기 눌렀다." + $('#input_feed_content').val())
+
+            let file = files
+            let image = files[0].name;
+            let content = $('#input_feed_content').val();
+            let user_id = "gyeom_03";
+            let profile_image = "https://mblogthumb-phinf.pstatic.net/MjAyMTAxMDVfNjcg/MDAxNjA5ODIzNTQ0ODE0.iy-_JMNPFLjy7L8klLfv0flw8CzSqPsy280ZFb1TwJUg.-WM6S8zeNX-Bb_P93J-B3l9YT7KtDiwchiYA5jhuWKAg.JPEG.sj330035/%EA%B7%80%EC%97%AC%EC%9A%B4%ED%94%84%EC%82%AC%EB%AA%A8%EC%9D%8C_(2).jpeg?type=w800";
+            
+            let fd = new FormData();
+            fd.append('file', file);
+            fd.append('content', content);
+            fd.append('image', image);
+            fd.append('user_id', user_id);
+            fd.append('profile_image', profile_image);
+            $.ajax({
+                url: '/content/upload',
+                data: fd,
+                method: "POST",
+                processData: false,
+                contentType: false,
+                success: function(data){
+                    console.log("성공")
+                },
+                error: function(request,status,error){
+                    console.log("에러")
+                },
+                complete: function (){
+                    console.log("완료")
+                }
+            })
+        })
+
     </script>
 
 
