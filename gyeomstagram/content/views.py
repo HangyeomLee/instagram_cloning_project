@@ -1,7 +1,10 @@
+import os
+from uuid import uuid4
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Feed
+from gyeomstagram.settings import MEDIA_ROOT
 
 # Create your views here.
 class Main_Content(APIView):
@@ -12,13 +15,17 @@ class Main_Content(APIView):
 
 class UploadFeed(APIView):
     def post(self, request):
-        file = request.data.get('file')
-        image = request.data.get('image')
+        file = request.FILES['file']
+        uuid_name = uuid4().hex
+        save_path = os.path.join(MEDIA_ROOT, uuid_name)
+        with open(save_path, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
         content = request.data.get('content')
-        user_id = request.data.get('user_id')
+        image = uuid_name
         profile_image = request.data.get('profile_image')
+        user_id = request.data.get('user_id')
 
-        print(file)
-        print(image)
+        Feed.objects.create(content=content, image=image, profile_image=profile_image, user_id=user_id, like_count=0)
 
         return Response(status=200)
