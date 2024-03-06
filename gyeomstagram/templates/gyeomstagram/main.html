@@ -442,7 +442,7 @@
             e.stopPropagation();
             e.preventDefault();
             dragOver(e);
-
+ 
             e.dataTransfer = e.originalEvent.dataTransfer;
             files = e.target.files || e.dataTransfer.files;
             if (files.length > 1) {
